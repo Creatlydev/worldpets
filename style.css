@@ -186,8 +186,18 @@ body {
 
 .gallery__gridBtn {
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 20px;
+    right: 20px;
+    transition: transform 300ms cubic-bezier(.87, -.5, .03, 1);
+    z-index: 1;
+}
+
+.gallery__gridBtn:hover {
+    transform: scale(1.2);
+}
+
+.gallery__gridBtn:active {
+    transform: scale(1);
 }
 
 #btnDelete {
