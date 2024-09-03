@@ -38,14 +38,12 @@
                 <div class="tabs__optionsWrapper">
                     <ul class="tabs__options" id="tabsOptions" role="tablist">
                         <li class="tabs__optionsItem active" role="tab">
-                            <button class="tabs__optionsButton" id="forYou-tab" aria-controls="forYou-content"
-                                aria-selected="true">
+                            <button class="tabs__optionsButton" id="forYou-tab" aria-controls="forYou-content">
                                 Para ti
                             </button>
                         </li>
                         <li class="tabs__optionsItem" role="tab">
-                            <button class="tabs__optionsButton" id="favourite-tab" aria-controls="favourite-content"
-                                aria-selected="false">
+                            <button class="tabs__optionsButton" id="favourite-tab" aria-controls="favourite-content">
                                 Favoritos
                             </button>
                         </li>
@@ -79,11 +77,12 @@
     <div class="overlay"></div>
     <div class="modalUpload">
         <div class="modal__content">
-            <form action="">
+            <form id="uploadForm">
                 <p>
                     Selecciona una imagen
                 </p>
-                <input type="file" name="photoDog" accept="image/png, image/jpg">
+                <input id="file" type="file" name="file">
+                <button type="button">Enviar</button>
             </form>
         </div>
     </div>

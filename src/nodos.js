@@ -14,5 +14,8 @@ export const btnDelete = document.getElementById('btnDelete')
 export const btnShowModal = document.querySelector('.btnUpload')
 export const modal = document.querySelector('.modalUpload')
 
+// UPLOAD FORM
+export const uploadForm = document.getElementById('uploadForm')
+
 // OVERLAY
 export const overlay = document.querySelector('.overlay')

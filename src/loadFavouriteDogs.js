@@ -4,7 +4,7 @@ import { initObserver } from './infinityScroll.js'
 import { createLoader } from './loader.js'
 import { favouriteContent, sectionFavourite } from './nodos.js'
 
-export async function loadFavouriteDogs({ limit = 10, index = 0 } = {}) {
+export async function loadFavouriteDogs({ limit = 24, index = 0 } = {}) {
   const loader = createLoader()
   sectionFavourite.appendChild(loader)
 
