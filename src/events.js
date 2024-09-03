@@ -1,5 +1,5 @@
 import { deleteFavouriteDog } from './deleteFavouriteDog.js'
-import { galleryWrapper, sectionFavourite, sectionForYou } from './nodos.js'
+import { btnShowModal, galleryWrapper, modal, overlay, sectionFavourite, sectionForYou } from './nodos.js'
 import { saveFavouriteDog } from './saveFavouriteDog.js'
 
 export function buttonsEvents() {
@@ -16,5 +16,19 @@ export function buttonsEvents() {
       deleteFavouriteDog(idImage)
       sectionFavourite.removeChild(galleryGridItem)
     }
+  })
+}
+
+export function modalEvents() {
+  btnShowModal.addEventListener('click', () => {
+    modal.classList.toggle('open')
+    document.body.classList.toggle('no-scroll')
+
+    overlay.addEventListener('click', () => {
+      modal.classList.toggle('open')
+      document.body.classList.toggle('no-scroll')
+    }, {
+      once: true
+    })
   })
 }

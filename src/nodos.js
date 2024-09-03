@@ -9,3 +9,10 @@ export const sentinel = document.querySelector('.sentinel')
 // buttons
 export const btnSave = document.getElementById('btnSave')
 export const btnDelete = document.getElementById('btnDelete')
+
+// MODAL
+export const btnShowModal = document.querySelector('.btnUpload')
+export const modal = document.querySelector('.modalUpload')
+
+// OVERLAY
+export const overlay = document.querySelector('.overlay')

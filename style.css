@@ -1,9 +1,9 @@
 * {
-    margin    : 0;
-    padding   : 0;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font      : inherit;
-    color     : inherit;
+    font: inherit;
+    color: inherit;
 }
 
 ul,
@@ -13,13 +13,13 @@ li {
 
 a {
     text-decoration: none;
-    display        : inline-block;
+    display: inline-block;
 }
 
 button {
     background-color: transparent;
-    border          : none;
-    cursor          : pointer;
+    border: none;
+    cursor: pointer;
 }
 
 img {
@@ -29,22 +29,26 @@ img {
 }
 
 :root {
-    --primary      : 34, 100%, 50%;
+    --primary: 34, 100%, 50%;
     --primary-light: 30, 100%, 96%;
-    --primary-dark : 34, 100%, 10%;
-    --light        : 0,  0%,   100%;
-    --dark         : 0,  0%,   17%;
+    --primary-dark: 34, 100%, 10%;
+    --light: 0, 0%, 100%;
+    --dark: 0, 0%, 17%;
 
     --header-height: 80px;
 }
 
+html {
+    scrollbar-width: thin;
+}
+
 body {
-    min-height      : 100vh;
-    font-family     : 'SUSE', sans-serif;
-    font-weight     : 300;
-    line-height     : 1;
+    min-height: 100vh;
+    font-family: 'SUSE', sans-serif;
+    font-weight: 300;
+    line-height: 1;
     background-color: hsl(var(--primary-light));
-    color           : hsl(var(--primary-dark));
+    color: hsl(var(--primary-dark));
 }
 
 
@@ -52,21 +56,21 @@ body {
 
 /* UTILS */
 .container {
-    width         : min(100%, 1320px);
-    margin-inline : auto;
+    width: min(100%, 1320px);
+    margin-inline: auto;
     padding-inline: 1.5rem;
 }
 
 .btn {
-    padding        : .5em 1em;
-    font-size      : 1rem;
-    display        : flex;
-    align-items    : center;
-    gap            : .5rem;
+    padding: .5em 1em;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
     justify-content: center;
-    text-wrap      : nowrap;
-    font-weight    : 500;
-    border-radius  : 100vh;
+    text-wrap: nowrap;
+    font-weight: 500;
+    border-radius: 100vh;
 }
 
 .btn__img {
@@ -77,15 +81,15 @@ body {
 
 /* HEADER */
 .header-wrapper {
-    height         : var(--header-height);
-    display        : flex;
-    align-items    : center;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
 .logo {
     height: 32px;
-    width : auto;
+    width: auto;
 }
 
 .header-wrapper .btn {
@@ -101,39 +105,42 @@ body {
     padding-top: 4.5rem;
 }
 
+.tabs__optionsWrapper {
+    padding: .5rem;
+    backdrop-filter: blur(64px);
+    background-color: hsla(var(--primary-light), .5);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
 
 .tabs__options {
-    width              : fit-content;
-    margin-inline      : auto;
-    position           : sticky;
-    top                : 0;
-    display            : flex;
-    justify-content    : center;
-    align-items        : center;
-    font-weight        : 500;
-    font-size          : 1.25rem;
-    gap                : .75rem;
-    height             : 48px;
-    backdrop-filter    : blur(32px);
-    position           : relative;
-    --w-indicator      : 0;
-    --l-indicator      : 0;
+    width: fit-content;
+    margin-inline: auto;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.25rem;
+    gap: .75rem;
+    height: 48px;
+    position: relative;
+    --w-indicator: 0;
+    --l-indicator: 0;
     --duration-property: 0s;
-    position           : sticky;
-    top                : 32px;
-    z-index            : 10;
-    background-color   : hsla(var(--primary-light), .5);
 }
 
 .tabs__options::after {
-    content            : '';
-    position           : absolute;
-    bottom             : 0px;
-    height             : 4px;
-    background-color   : hsl(var(--primary));
-    border-radius      : 4px;
-    width              : var(--w-indicator);
-    left               : var(--l-indicator);
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    height: 4px;
+    background-color: hsl(var(--primary));
+    border-radius: 4px;
+    width: var(--w-indicator);
+    left: var(--l-indicator);
     transition-property: left;
     transition-duration: var(--duration-property);
 }
@@ -178,12 +185,10 @@ body {
     position: absolute;
     content: '';
     inset: 0;
-    background: linear-gradient(
-        0deg,
-        #999 20%,
-        transparent,
-        #999 80%
-    );
+    background: linear-gradient(0deg,
+            #999 20%,
+            transparent,
+            #999 80%);
     mix-blend-mode: multiply;
     pointer-events: none;
 }
@@ -214,4 +219,96 @@ body {
 
 #btnDelete {
     color: red;
+}
+
+
+.btnUpload {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background-color: hsl(var(--primary));
+    position: fixed;
+    z-index: 1000;
+    bottom: 24px;
+    right: 24px;
+    animation: bounce 1s infinite;
+    box-shadow:
+        0 4px 32px hsla(var(--primary), .3),
+        0 8px 64px hsla(var(--primary), .15);
+
+    >img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    to {
+        transform: translateY(-8px);
+        animation-timing-function: cubic-bezier(.8, 0, 1, 1)
+    }
+
+    50% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0, 0, .2, 1)
+    }
+}
+
+
+.modalUpload {
+    position: fixed;
+    inset-inline: 25%;
+    height: auto;
+    background-color: #fff;
+    z-index: 9999;
+    top: 50%;
+    transform: translateY(-500%);
+    text-align: center;
+    border-radius: .5rem;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, .25);
+    transition: transform 600ms cubic-bezier(.87, -.5, .03, 1);
+
+    .modal__content {
+        padding: 3rem 1.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+    }
+
+    input {
+        cursor: pointer;
+    }
+
+    input::file-selector-button {
+        cursor: pointer;
+        background-color: hsl(var(--primary));
+        border: none;
+        padding: .25rem .5rem;
+        color: #fff;
+        border-radius: 4px;
+        font: inherit;
+        font-weight: 500;
+    }
+}
+
+.modalUpload.open {
+    transform: translateY(-50%);
+}
+
+body:has(.modalUpload.open) .overlay {
+    position: fixed;
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(8px);
+    inset: 0;
+    z-index: 999;
+    top: 0;
+}
+
+body.no-scroll {
+    overflow: hidden;
 }

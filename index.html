@@ -24,10 +24,10 @@
                 <img src="./public/logo.svg" alt="" class="logo__img">
             </div>
 
-            <button class="btn">
+            <a href="#" class="btn">
                 <img src="./public/icons/github.svg" alt="" class="btn__img">
                 Github
-            </button>
+            </a>
         </div>
     </header>
 
@@ -35,20 +35,22 @@
         <section class="tabs">
 
             <div class="container">
-                <ul class="tabs__options" id="tabsOptions" role="tablist">
-                    <li class="tabs__optionsItem active" role="tab">
-                        <button class="tabs__optionsButton" id="forYou-tab" aria-controls="forYou-content"
-                            aria-selected="true">
-                            Para ti
-                        </button>
-                    </li>
-                    <li class="tabs__optionsItem" role="tab">
-                        <button class="tabs__optionsButton" id="favourite-tab" aria-controls="favourite-content"
-                            aria-selected="false">
-                            Favoritos
-                        </button>
-                    </li>
-                </ul>
+                <div class="tabs__optionsWrapper">
+                    <ul class="tabs__options" id="tabsOptions" role="tablist">
+                        <li class="tabs__optionsItem active" role="tab">
+                            <button class="tabs__optionsButton" id="forYou-tab" aria-controls="forYou-content"
+                                aria-selected="true">
+                                Para ti
+                            </button>
+                        </li>
+                        <li class="tabs__optionsItem" role="tab">
+                            <button class="tabs__optionsButton" id="favourite-tab" aria-controls="favourite-content"
+                                aria-selected="false">
+                                Favoritos
+                            </button>
+                        </li>
+                    </ul>
+                </div>
 
                 <div class="gallery-wrapper">
                     <section class="gallery gallery--random" id="forYou-content" role="tabpanel"
@@ -69,6 +71,22 @@
 
         </section>
     </main>
+
+    <button class="btnUpload">
+        <img src="./public/icons/upload.svg" alt="" class="btnUpload__img">
+    </button>
+
+    <div class="overlay"></div>
+    <div class="modalUpload">
+        <div class="modal__content">
+            <form action="">
+                <p>
+                    Selecciona una imagen
+                </p>
+                <input type="file" name="photoDog" accept="image/png, image/jpg">
+            </form>
+        </div>
+    </div>
 
     <div class="sentinel"></div>
 
