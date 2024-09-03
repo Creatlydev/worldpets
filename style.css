@@ -119,6 +119,10 @@ body {
     --w-indicator      : 0;
     --l-indicator      : 0;
     --duration-property: 0s;
+    position           : sticky;
+    top                : 32px;
+    z-index            : 10;
+    background-color   : hsla(var(--primary-light), .5);
 }
 
 .tabs__options::after {
@@ -182,6 +186,14 @@ body {
     );
     mix-blend-mode: multiply;
     pointer-events: none;
+}
+
+.gallery__gridImg {
+    transition: transform 300ms cubic-bezier(.87, -.5, .03, 1);
+}
+
+.gallery__gridImg:hover {
+    transform: scale(1.2);
 }
 
 .gallery__gridBtn {

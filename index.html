@@ -9,11 +9,11 @@
 
     <link rel="stylesheet" href="./style.css">
 
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet" /> -->
 </head>
 
 <body>
@@ -49,14 +49,15 @@
                         </button>
                     </li>
                 </ul>
-                
+
                 <div class="gallery-wrapper">
-                    <section class="gallery gallery--random" id="forYou-content" role="tabpanel" aria-labelledby="forYou-tab" style="display: block;">
+                    <section class="gallery gallery--random" id="forYou-content" role="tabpanel"
+                        aria-labelledby="forYou-tab" style="display: block;">
                         <div class="gallery__grid" id="galleryForYou" aria-live="polite">
                             <!-- Las imágenes random se insertarán aquí -->
                         </div>
                     </section>
-                
+
                     <section class="gallery gallery--favorites" id="favourite-content" role="tabpanel"
                         aria-labelledby="favourites-tab" hidden>
                         <div class="gallery__grid" id="galleryFavourite" aria-live="polite">
@@ -71,6 +72,8 @@
 
     <div class="sentinel"></div>
 
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="./src/main.js"></script>
 </body>
 
